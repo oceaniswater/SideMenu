@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol MenuViewControllerDelegate: AnyObject {
+    func didSelect(menuItem: MenuViewController.MenuOptions)
+}
+
 class MenuViewController: UIViewController {
+    
+    weak var delegate: MenuViewControllerDelegate?
     
     enum MenuOptions: String, CaseIterable {
         case home = "Home"
@@ -69,6 +75,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         var content = cell.defaultContentConfiguration()
         let text = MenuOptions.allCases[indexPath.row].rawValue
         content.image = UIImage(systemName: MenuOptions.allCases[indexPath.row].imageName)
+        content.imageProperties.tintColor = .white
         content.text = text
         content.textProperties.color = .white
         cell.contentConfiguration = content
@@ -80,7 +87,8 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        let item = MenuOptions.allCases[indexPath.row]
+        delegate?.didSelect(menuItem: item)
     }
     
     

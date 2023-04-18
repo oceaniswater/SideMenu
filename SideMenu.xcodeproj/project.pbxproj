@@ -14,6 +14,7 @@
 		867688BA29ED9C0D00D1BD85 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867688B929ED9C0D00D1BD85 /* ContainerViewController.swift */; };
 		867688BD29ED9D1700D1BD85 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867688BC29ED9D1700D1BD85 /* MenuViewController.swift */; };
 		867688BF29ED9D3300D1BD85 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867688BE29ED9D3300D1BD85 /* HomeViewController.swift */; };
+		86E1179829EE8EEE006E4FDA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E1179729EE8EEE006E4FDA /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		867688B929ED9C0D00D1BD85 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		867688BC29ED9D1700D1BD85 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		867688BE29ED9D3300D1BD85 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		86E1179729EE8EEE006E4FDA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				867688B929ED9C0D00D1BD85 /* ContainerViewController.swift */,
 				867688BC29ED9D1700D1BD85 /* MenuViewController.swift */,
 				867688BE29ED9D3300D1BD85 /* HomeViewController.swift */,
+				86E1179729EE8EEE006E4FDA /* InfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				867688A629ED9A0D00D1BD85 /* AppDelegate.swift in Sources */,
 				867688BA29ED9C0D00D1BD85 /* ContainerViewController.swift in Sources */,
 				867688A829ED9A0D00D1BD85 /* SceneDelegate.swift in Sources */,
+				86E1179829EE8EEE006E4FDA /* InfoViewController.swift in Sources */,
 				867688BD29ED9D1700D1BD85 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

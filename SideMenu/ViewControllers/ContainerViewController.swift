@@ -19,6 +19,7 @@ class ContainerViewController: UIViewController {
     let menuVC = MenuViewController()
     let homeVC = HomeViewController()
     var navVC: UINavigationController?
+    lazy var infoVC = InfoViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class ContainerViewController: UIViewController {
     
     private func addChildVCc() {
         // Menu
+        menuVC.delegate = self
         addChild(menuVC)
         view.addSubview(menuVC.view)
         menuVC.didMove(toParent: self)
@@ -47,6 +49,11 @@ class ContainerViewController: UIViewController {
 
 extension ContainerViewController: HomeViewControllerDelegate {
     func didTapMenuButton() {
+        togleMenu(completion: nil)
+        
+    }
+    
+    func togleMenu(completion: (() -> Void)?) {
         // Animate the menu
         switch menuState {
         case .closed:
@@ -69,11 +76,60 @@ extension ContainerViewController: HomeViewControllerDelegate {
             } completion: { [weak self] done in
                 if done {
                     self?.menuState = .closed
+                    DispatchQueue.main.async {
+                        completion?()
+                    }
                 }
             }
         }
+    }
+}
+
+extension ContainerViewController: MenuViewControllerDelegate {
+    func didSelect(menuItem: MenuViewController.MenuOptions) {
+//        togleMenu { [weak self] in
+//            switch menuItem {
+//            case .home:
+//                self?.resetToHome()
+//            case .info:
+//                self?.addInfo()
+//            case .appRating:
+//                break
+//            case .shareApp:
+//                break
+//            case .settings:
+//                break
+//            }
+//        }
         
+        togleMenu(completion: nil)
+            switch menuItem {
+            case .home:
+                resetToHome()
+            case .info:
+                addInfo()
+            case .appRating:
+                break
+            case .shareApp:
+                break
+            case .settings:
+                break
+            }
     }
     
+    func addInfo() {
+        let vc = infoVC
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: self)
+        homeVC.title = vc.title
+    }
+    
+    func resetToHome() {
+        infoVC.view.removeFromSuperview()
+        infoVC.didMove(toParent: nil)
+        homeVC.title = "Home"
+    }
     
 }
