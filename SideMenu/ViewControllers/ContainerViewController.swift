@@ -87,34 +87,20 @@ extension ContainerViewController: HomeViewControllerDelegate {
 
 extension ContainerViewController: MenuViewControllerDelegate {
     func didSelect(menuItem: MenuViewController.MenuOptions) {
-//        togleMenu { [weak self] in
-//            switch menuItem {
-//            case .home:
-//                self?.resetToHome()
-//            case .info:
-//                self?.addInfo()
-//            case .appRating:
-//                break
-//            case .shareApp:
-//                break
-//            case .settings:
-//                break
-//            }
-//        }
         
         togleMenu(completion: nil)
-            switch menuItem {
-            case .home:
-                resetToHome()
-            case .info:
-                addInfo()
-            case .appRating:
-                break
-            case .shareApp:
-                break
-            case .settings:
-                break
-            }
+        switch menuItem {
+        case .home:
+            resetToHome()
+        case .info:
+            addInfo()
+        case .appRating:
+            break
+        case .shareApp:
+            break
+        case .settings:
+            break
+        }
     }
     
     func addInfo() {
